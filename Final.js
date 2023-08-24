@@ -22,6 +22,8 @@ class PCB {
   }
 }
 
+
+
 // function createProcesses() {
 //   const readline = require('readline');
 //   const rl = readline.createInterface({
@@ -110,6 +112,7 @@ function startScheduling(processes) {
       process.state = 'Blocked';
     } else {
       process.state = 'Running';
+      
       
       for (let i = 0; i < timeSlice; i++) {
         if (process.programCounter < process.instructions.length) {
