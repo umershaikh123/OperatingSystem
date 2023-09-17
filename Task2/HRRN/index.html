@@ -8,9 +8,22 @@
 <body>
   <div class="container">
     <h1>Highest Response Ratio Next Algorithm</h1>
-    <label for="numProcesses">Number of Processes:</label>
-    <input type="number" id="numProcesses" min="1" step="1">
-    <button onclick="getInput()">Submit</button>
+
+
+  
+       <!-- <label for="numProcesses">Number of Processes:</label>   -->
+       <input type="number" id="numProcesses" min="1" step="1" placeholder="Number of Processes:" name="number" class="input" style="margin-right: 4px;">
+      <!-- <input type="number" id="numProcesses"    min="1" step="1"> -->
+      <!-- <input type="password" placeholder="Password" name="text" class="input"> -->
+    
+      <button onclick="getInput()" class="learn-more" >Submit</button>
+      
+
+    <!-- <label for="numProcesses">Number of Processes:</label> -->
+    <!-- <input type="number" id="numProcesses" min="1" step="1"> -->
+
+
+  
 
     <div id="processesInput" style="display:none;">
       <h2>Enter Arrival and Burst Time for Each Process:</h2>
@@ -18,7 +31,7 @@
         <!-- The table will be dynamically generated here -->
       </table>
 
-      <button onclick="calculateHRRN()">Calculate HRRN</button>
+      <button onclick="calculateHRRN()" class="learn-more" style="margin-top: 14px; margin-bottom: 14px;">Calculate HRRN</button>
       <h2>HRRN Results:</h2>
       <table id="hrrnTable">
           <!-- HRRN results will be displayed here -->

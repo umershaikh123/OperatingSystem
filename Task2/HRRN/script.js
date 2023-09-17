@@ -10,8 +10,8 @@ function getInput() {
   for (let i = 1; i <= numProcesses; i++) {
     tableContent += `<tr>
                         <td>Process ${i}</td>
-                        <td><input type="number" id="arrivalTime${i}" min="0" step="1"></td>
-                        <td><input type="number" id="executionTime${i}" min="1" step="1"></td>
+                        <td><input type="number" id="arrivalTime${i}" min="0" step="1" class="input" ></td>
+                        <td><input type="number" id="executionTime${i}" min="1" step="1" class="input" ></td>
                       </tr>`
   }
 
@@ -40,7 +40,7 @@ function calculateHRRN() {
     const burstTime = parseInt(
       document.getElementById(`executionTime${i}`).value
     )
-    processes.push({ name: `Process ${i}`, arrivalTime, burstTime })
+    processes.push({ name: `P${i}`, arrivalTime, burstTime })
   }
 
   // Sort processes by arrival time
@@ -115,8 +115,8 @@ function calculateHRRN() {
   // Display average metrics
   const metricsDiv = document.getElementById("metrics")
   metricsDiv.innerHTML = `<h2>Average Metrics</h2>
-                          <p>Average Waiting Time: ${avgWaitingTime}</p>
-                          <p>Average Turnaround Time: ${avgTurnaroundTime}</p>`
+                          <h3>Average Waiting Time: ${avgWaitingTime}</h3>
+                          <h3>Average Turnaround Time: ${avgTurnaroundTime}</h3>`
 
   // Visualization dimensions
   const width = 1200
@@ -169,9 +169,9 @@ function calculateHRRN() {
     .append("text")
     .attr("x", d => xScale(d.startTime) + 5)
     .attr("y", 40)
-    .text(d => d.process)
-    .attr("font-size", "12px")
-    .attr("fill", "black")
+    .text(d => `${d.process}`)
+    .attr("font-size", "14px")
+    .attr("fill", "white")
 
   // Create x-axis
   const xAxis = d3.axisBottom(xScale)

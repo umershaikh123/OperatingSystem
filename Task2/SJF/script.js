@@ -9,7 +9,7 @@ function getInput() {
   for (let i = 1; i <= numProcesses; i++) {
     tableContent += `<tr>
                         <td>Process ${i}</td>
-                        <td><input type="number" id="executionTime${i}" min="1" step="1"></td>
+                        <td><input type="number" id="executionTime${i}" min="1" step="1" class="input" ></td>
                       </tr>`
   }
 
@@ -127,9 +127,9 @@ function calculateSJF() {
     .append("text")
     .attr("x", d => xScale(d.startTime) + 5)
     .attr("y", 40)
-    .text(d => `P ${d.process}`)
-    .attr("font-size", "12px")
-    .attr("fill", "black")
+    .text(d => `P${d.process}`)
+    .attr("font-size", "14px")
+    .attr("fill", "white")
 
   // Create x-axis
   const xAxis = d3.axisBottom(xScale)

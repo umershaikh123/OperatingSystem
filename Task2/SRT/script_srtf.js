@@ -10,8 +10,8 @@ function getInput() {
   for (let i = 1; i <= numProcesses; i++) {
     tableContent += `<tr>
                         <td>Process ${i}</td>
-                        <td><input type="number" id="arrivalTime${i}" min="0" step="1"></td>
-                        <td><input type="number" id="executionTime${i}" min="1" step="1"></td>
+                        <td><input type="number" id="arrivalTime${i}" min="0" step="1" class="input" ></td>
+                        <td><input type="number" id="executionTime${i}" min="1" step="1" class="input" ></td>
                       </tr>`
   }
 
@@ -230,8 +230,8 @@ function calculateSRTF() {
     .attr("x", d => xScale(d.startTime) + 5)
     .attr("y", 40)
     .text(d => `P${d.process}`)
-    .attr("font-size", "12px")
-    .attr("fill", "black")
+    .attr("font-size", "14px")
+    .attr("fill", "white")
 
   // Create x-axis
   const xAxis = d3.axisBottom(xScale)
@@ -240,10 +240,10 @@ function calculateSRTF() {
   const metricsDiv = document.getElementById("metrics")
   metricsDiv.innerHTML = `
     <h2>Metrics:</h2>
-    <p>Average Turnaround Time: ${avgTurnaroundTime}</p>
-    <p>Average Waiting Time: ${avgWaitingTime}</p>
-    <p>Average Response Time: ${avgResponseTime}</p>
-    <p>CPU Utilization: ${cpuUtilization.toFixed(2)}%</p>
-    <p>Throughput: ${throughput.toFixed(2)} process/unit time</p>
+    <h3>Average Turnaround Time: ${avgTurnaroundTime}</h3>
+    <h3>Average Waiting Time: ${avgWaitingTime}</h3>
+    <h3>Average Response Time: ${avgResponseTime}</h3>
+    <h3>CPU Utilization: ${cpuUtilization.toFixed(2)}%</h3>
+    <h3>Throughput: ${throughput.toFixed(2)} process/unit time</h3>
   `
 }
