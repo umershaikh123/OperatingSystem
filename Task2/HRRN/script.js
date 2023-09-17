@@ -171,7 +171,7 @@ function calculateHRRN() {
     .attr("y", 40)
     .text(d => `${d.process}`)
     .attr("font-size", "14px")
-    .attr("fill", "white")
+    .attr("fill", "black")
 
   // Create x-axis
   const xAxis = d3.axisBottom(xScale)
