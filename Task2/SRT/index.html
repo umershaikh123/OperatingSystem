@@ -9,8 +9,12 @@
   <div class="container">
     <h1>Shortest Remaining Time (SRT) Algorithm</h1>
     <!-- <label for="numProcesses">Number of Processes:</label> -->
-    <input type="number" id="numProcesses" min="1" step="1" placeholder="Number of Processes:" name="number" class="input" style="margin-right: 4px;">
-    <button onclick="getInput()" class="learn-more">Submit</button>
+    <!-- <input type="number" id="numProcesses" min="1" step="1" placeholder="Number of Processes:" name="number" class="input" style="margin-right: 4px;">
+    <button onclick="getInput()" class="learn-more">Submit</button> -->
+    <form onsubmit="return getInput()">
+      <input type="number" id="numProcesses" min="1" step="1" placeholder="Number of Processes:" name="number" class="input" style="margin-right: 4px;">
+      <button type="submit" class="learn-more">Submit</button>
+    </form>
 
     <div id="processesInput" style="display:none;">
       <h2>Enter Arrival and Execution Time for Each Process:</h2>
