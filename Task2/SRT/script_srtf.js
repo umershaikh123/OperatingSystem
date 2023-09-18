@@ -17,6 +17,7 @@ function getInput() {
 
   processTable.innerHTML = tableContent;
   document.getElementById("processesInput").style.display = "block";
+  return false;
 }
 
 // Function to generate a random color
