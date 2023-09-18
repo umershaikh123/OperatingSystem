@@ -123,6 +123,8 @@ function calculateHRRN() {
   const width = 1200;
   const height = 100;
 
+  d3.select("#visualization svg").remove()
+
   // Create an SVG element for visualization
   const svg = d3
     .select("#visualization")

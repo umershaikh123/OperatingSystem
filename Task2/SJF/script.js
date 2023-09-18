@@ -95,8 +95,11 @@ function calculateSJF() {
   }
 
   // Visualization dimensions
-  const width = 1200;
-  const height = 100;
+
+  const width = 1200
+  const height = 100
+  d3.select("#visualization svg").remove()
+
 
   // Create an SVG element
   const svg = d3
