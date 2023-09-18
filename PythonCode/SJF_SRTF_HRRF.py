@@ -346,12 +346,7 @@ def execute_shortest_remaining_time_first(processes):
     print("Final Process Table")
     print_process_table(processes)
     print_process_average_table(processes)
-    # for process in processes:
-    #     print(process.process_id)
-    #     print("start times", process.start_times)
-    #     print("end times", process.end_times)
-    #     print()
-
+ 
 
 def execute_highest_response_ratio_first(processes):
     ready_queue = []
