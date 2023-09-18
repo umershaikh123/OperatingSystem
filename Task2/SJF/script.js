@@ -20,6 +20,25 @@ function getInput() {
   return false
 }
 
+function generateRandomValues() {
+  const numProcesses = parseInt(document.getElementById("numProcesses").value)
+  const processTable = document.getElementById("processTable")
+
+  // Generate random arrival and execution times for each process
+  for (let i = 1; i <= numProcesses; i++) {
+    const arrivalTimeInput = document.getElementById(`arrivalTime${i}`)
+    const executionTimeInput = document.getElementById(`executionTime${i}`)
+
+    // Generate random values between 1 and 20 for arrival and execution times
+    const randomArrivalTime = Math.floor(Math.random() * 20) + 1
+    const randomExecutionTime = Math.floor(Math.random() * 20) + 1
+
+    // Set the random values in the input fields
+    arrivalTimeInput.value = randomArrivalTime
+    executionTimeInput.value = randomExecutionTime
+  }
+}
+
 // Function to generate a random color
 function getRandomColor() {
   const letters = "0123456789ABCDEF"
