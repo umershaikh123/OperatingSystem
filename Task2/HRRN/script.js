@@ -116,8 +116,8 @@ function calculateHRRN() {
   // Display average metrics
   const metricsDiv = document.getElementById("metrics");
   metricsDiv.innerHTML = `<h2>Average Metrics</h2>
-                          <h3>Average Waiting Time: ${avgWaitingTime}</h3>
-                          <h3>Average Turnaround Time: ${avgTurnaroundTime}</h3>`;
+                          <h3>Average Waiting Time: ${avgWaitingTime.toFixed(3)}</h3>
+                          <h3>Average Turnaround Time: ${avgTurnaroundTime.toFixed(3)}</h3>`;
 
   // Visualization dimensions
   const width = 1200;

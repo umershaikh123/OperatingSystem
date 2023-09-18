@@ -245,9 +245,9 @@ function calculateSRTF() {
   const metricsDiv = document.getElementById("metrics");
   metricsDiv.innerHTML = `
     <h2>Metrics:</h2>
-    <h3>Average Turnaround Time: ${avgTurnaroundTime}</h3>
-    <h3>Average Waiting Time: ${avgWaitingTime}</h3>
-    <h3>Average Response Time: ${avgResponseTime}</h3>
+    <h3>Average Turnaround Time: ${avgTurnaroundTime.toFixed(3)}</h3>
+    <h3>Average Waiting Time: ${avgWaitingTime.toFixed(3)}</h3>
+    <h3>Average Response Time: ${avgResponseTime.toFixed(3)}</h3>
     <h3>CPU Utilization: ${cpuUtilization.toFixed(2)}%</h3>
     <h3>Throughput: ${throughput.toFixed(2)} process/unit time</h3>
   `;
