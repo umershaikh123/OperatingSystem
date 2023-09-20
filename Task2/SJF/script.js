@@ -4,6 +4,10 @@ function getInput() {
   const processTable = document.getElementById("processTable")
   processTable.innerHTML = "" // Clear previous content
 
+  processTable.classList.remove("table-fade-in") // Remove previous animation class
+  void processTable.offsetWidth // Trigger reflow to reset animation
+  processTable.classList.add("table-fade-in") // Add animation class
+
   let tableContent =
     "<tr><th>Process</th><th>Arrival Time</th><th>Execution Time</th></tr>"
 
@@ -80,6 +84,10 @@ function calculateSJF() {
   sjfTable.innerHTML =
     "<tr><th>Process</th><th>Arrival Time</th><th>Execution Time</th><th>Start Time</th><th>Finish Time</th><th>Waiting Time</th><th>Turnaround Time</th><th>Utilization Time</th></tr>"
 
+  sjfTable.classList.remove("table-fade-in")
+  void sjfTable.offsetWidth // Trigger reflow to reset animation
+  sjfTable.classList.add("table-fade-in")
+
   // Data for visualization
   const visualizationData = []
 
@@ -151,6 +159,10 @@ function calculateSJF() {
       </tr>
     </table>
   `
+
+    metricsDiv.classList.remove("table-fade-in")
+    void metricsDiv.offsetWidth // Trigger reflow to reset animation
+    metricsDiv.classList.add("table-fade-in")
 
     // Generate a random color for each process
     processes[i].color = getRandomColor()

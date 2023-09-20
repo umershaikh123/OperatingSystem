@@ -8,6 +8,7 @@ body {
 }
 
 
+
 .container {
   width: 80%;
   margin: auto;
@@ -207,3 +208,25 @@ button.learn-more2 {
   -webkit-transform: translate3d(0, 0, -1em);
   transform: translate3d(0, 0, -1em);
  }
+
+
+
+ /* Animation for table reveal */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.table-fade-in {
+  animation: fadeIn 0.5s forwards;
+}
+
+/* Animation for value update */
+@keyframes valueUpdate {
+  from { color: #ff0000; }
+  to { color: inherit; }
+}
+
+.value-update {
+  animation: valueUpdate 0.5s;
+}

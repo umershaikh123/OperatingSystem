@@ -4,6 +4,10 @@ function getInput() {
   const processTable = document.getElementById("processTable")
   processTable.innerHTML = "" // Clear previous content
 
+  processTable.classList.remove("table-fade-in") // Remove previous animation class
+  void processTable.offsetWidth // Trigger reflow to reset animation
+  processTable.classList.add("table-fade-in") // Add animation class
+
   let tableContent =
     "<tr><th>Process</th><th>Arrival Time</th><th>Execution Time</th></tr>"
 
@@ -165,6 +169,10 @@ function calculateSRTF() {
     </tr>
   `
 
+  srtfTable.classList.remove("table-fade-in")
+  void srtfTable.offsetWidth // Trigger reflow to reset animation
+  srtfTable.classList.add("table-fade-in")
+
   for (let i = 0; i < numProcesses; i++) {
     const utilizationPercentage = (
       (processes[i].burstTime / processes[i].turnaroundTime) *
@@ -274,4 +282,8 @@ function calculateSRTF() {
     </tr>
   </table>
 `
+
+  metricsDiv.classList.remove("table-fade-in")
+  void metricsDiv.offsetWidth // Trigger reflow to reset animation
+  metricsDiv.classList.add("table-fade-in")
 }
