@@ -34,8 +34,8 @@ function generateRandomValues() {
     const executionTimeInput = document.getElementById(`executionTime${i}`)
 
     // Generate random values between 1 and 20 for arrival and execution times
-    const randomArrivalTime = Math.floor(Math.random() * 20) + 1
-    const randomExecutionTime = Math.floor(Math.random() * 20) + 1
+    const randomArrivalTime = Math.floor(Math.random() * 10) + 1
+    const randomExecutionTime = Math.floor(Math.random() * 10) + 1
 
     // Set the random values in the input fields
     arrivalTimeInput.value = randomArrivalTime
