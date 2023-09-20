@@ -183,7 +183,7 @@ function calculateSRTF() {
   // Visualization dimensions
 
   const width = 1200
-  const height = 100
+  const height = Math.max(100, (numProcesses + 1) * 40) // Increased height to accommodate the last rectangle
   d3.select("#visualization svg").remove()
   // Create an SVG element
   const svg = d3
@@ -215,34 +215,41 @@ function calculateSRTF() {
     })
   }
 
-  // Draw rectangles for each process
+  // Update the rectangle positioning and width calculation
   svg
     .selectAll("rect")
     .data(visualizationData)
     .enter()
     .append("rect")
     .attr("x", d => xScale(d.startTime))
-    .attr("y", 20)
-    .attr("width", d => xScale(d.finishTime) - xScale(d.startTime))
+    .attr("y", (d, i) => 10 + i * 40) // Adjust y-position to prevent overlap
+    .attr("width", d => Math.max(1, xScale(d.finishTime) - xScale(d.startTime))) // Ensure width is at least 1
     .attr("height", 30)
     .attr("fill", d => d.color)
 
-  // Add labels for each process
+  // Update the label positioning
   svg
     .selectAll("text")
     .data(visualizationData)
     .enter()
     .append("text")
-    .attr("x", d => xScale(d.startTime) + 5)
-    .attr("y", 40)
+    .attr(
+      "x",
+      d =>
+        xScale(d.startTime) +
+        Math.max(5, (xScale(d.finishTime) - xScale(d.startTime)) / 2)
+    ) // Center the label
+    .attr("y", (d, i) => 30 + i * 40) // Adjust y-position to match the rectangles
     .text(d => `P${d.process}`)
     .attr("font-size", "14px")
     .attr("fill", "black")
 
   // Create x-axis
   const xAxis = d3.axisBottom(xScale)
-  svg.append("g").attr("transform", `translate(0, 60)`).call(xAxis)
-
+  svg
+    .append("g")
+    .attr("transform", `translate(0, ${height - 20})`)
+    .call(xAxis)
   const metricsDiv = document.getElementById("metrics")
   metricsDiv.innerHTML = `
   <h2>Metrics:</h2>
