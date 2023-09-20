@@ -167,8 +167,28 @@ function calculateSJF() {
 
   // Visualization dimensions
 
-  const width = 1200
+  // const width = 1200
   const height = 100
+
+  let width
+  if (numProcesses <= 10) {
+    width = 1200
+  } else if (numProcesses >= 10 && numProcesses < 20) {
+    width = 1600
+  } else if (numProcesses >= 20 && numProcesses < 30) {
+    width = 2400
+  } else if (numProcesses >= 30 && numProcesses < 40) {
+    width = 3600
+  } else if (numProcesses >= 40 && numProcesses < 50) {
+    width = 4800
+  } else if (numProcesses >= 50 && numProcesses < 60) {
+    width = 6000
+  } else {
+    // For processes between 10 and 20, you can set a width of your choice
+    // Adjust this as needed
+    width = 7000
+  }
+
   d3.select("#visualization svg").remove()
 
   // Create an SVG element
@@ -178,8 +198,18 @@ function calculateSJF() {
     .attr("width", width)
     .attr("height", height)
 
+  const maxFinishTime = d3.max(visualizationData, d => d.finishTime)
+  // const uniqueTimeValues = Array.from(
+  //   new Set(
+  //     visualizationData
+  //       .map(d => d.startTime)
+  //       .concat(visualizationData.map(d => d.finishTime))
+  //   )
+  // )
   // Create x-scale based on total time
-  const xScale = d3.scaleLinear().domain([0, totalTime]).range([0, width])
+  // const xScale = d3.scaleLinear().domain([0, totalTime]).range([0, width])
+  const xScale = d3.scaleLinear().domain([0, maxFinishTime]).range([0, width])
+  // const xScale = d3.scaleLinear().domain(0, maxFinishTime).range([0, width])
 
   // Draw rectangles for each process
   svg

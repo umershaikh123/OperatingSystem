@@ -149,6 +149,8 @@ function calculateSRTF() {
     ((maxCompletionTime - totalIdleTime) / maxCompletionTime) * 100
   // const throughput = numProcesses / (maxCompletionTime - minArrivalTime)
 
+  processes.sort((a, b) => a.startTime - b.startTime)
+
   const srtfTable = document.getElementById("srtfTable")
   srtfTable.innerHTML = `
     <tr>
