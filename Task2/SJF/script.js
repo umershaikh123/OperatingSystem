@@ -9,7 +9,7 @@ function getInput() {
   processTable.classList.add("table-fade-in") // Add animation class
 
   let tableContent =
-    "<tr><th>Process</th><th>Arrival Time</th><th>Execution Time</th></tr>"
+    "<tr><th>Process</th><th>Arrival Time</th><th>Burst Time</th></tr>"
 
   for (let i = 1; i <= numProcesses; i++) {
     tableContent += `<tr>
@@ -82,7 +82,7 @@ function calculateSJF() {
 
   const sjfTable = document.getElementById("sjfTable")
   sjfTable.innerHTML =
-    "<tr><th>Process</th><th>Arrival Time</th><th>Execution Time</th><th>Start Time</th><th>Finish Time</th><th>Waiting Time</th><th>Turnaround Time</th><th>Utilization Time</th></tr>"
+    "<tr><th>Process</th><th>Arrival Time</th><th>Burst Time</th><th>Start Time</th><th>Finish Time</th><th>Waiting Time</th><th>Turnaround Time</th><th>Utilization Time</th></tr>"
 
   sjfTable.classList.remove("table-fade-in")
   void sjfTable.offsetWidth // Trigger reflow to reset animation
