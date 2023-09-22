@@ -126,8 +126,6 @@ function calculateSJF() {
     let totalUtilization = 0
 
     for (let i = 0; i < numProcesses; i++) {
-      // Existing code ...
-
       totalTurnaroundTime += processes[i].turnaroundTime
       totalWaitingTime += processes[i].waitingTime
       totalUtilization += processes[i].utilizationTime
@@ -179,7 +177,6 @@ function calculateSJF() {
 
   // Visualization dimensions
 
-  // const width = 1200
   const height = 100
 
   let width
@@ -196,13 +193,14 @@ function calculateSJF() {
   } else if (numProcesses >= 50 && numProcesses < 60) {
     width = 6000
   } else {
-    // For processes between 10 and 20, you can set a width of your choice
-    // Adjust this as needed
     width = 7000
   }
 
   d3.select("#visualization svg").remove()
-
+  const Diagram = document.getElementById("visualization")
+  Diagram.classList.remove("table-fade-in")
+  void Diagram.offsetWidth // Trigger reflow to reset animation
+  Diagram.classList.add("table-fade-in")
   // Create an SVG element
   const svg = d3
     .select("#visualization")
@@ -211,19 +209,21 @@ function calculateSJF() {
     .attr("height", height)
 
   const maxFinishTime = d3.max(visualizationData, d => d.finishTime)
-  // const uniqueTimeValues = Array.from(
-  //   new Set(
-  //     visualizationData
-  //       .map(d => d.startTime)
-  //       .concat(visualizationData.map(d => d.finishTime))
-  //   )
-  // )
+  const minRectWidth = 100 // Set your desired minimum width
+  const minRectWidthWithMargin = minRectWidth * 50.5 // Add margin for better visibility
   // Create x-scale based on total time
-  // const xScale = d3.scaleLinear().domain([0, totalTime]).range([0, width])
+  // Define the minimum width for rectangles
+  const minimumWidth = 20
+
+  // Function to calculate rectangle width ensuring it's at least the minimum width
+  function calculateRectWidth(startTime, finishTime, minRectWidth) {
+    const width = xScale(finishTime) - xScale(startTime)
+    return width < minRectWidth ? minRectWidth : width
+  }
   const xScale = d3.scaleLinear().domain([0, maxFinishTime]).range([0, width])
-  // const xScale = d3.scaleLinear().domain(0, maxFinishTime).range([0, width])
 
   // Draw rectangles for each process
+
   svg
     .selectAll("rect")
     .data(visualizationData)
@@ -231,9 +231,22 @@ function calculateSJF() {
     .append("rect")
     .attr("x", d => xScale(d.startTime))
     .attr("y", 20)
-    .attr("width", d => xScale(d.finishTime) - xScale(d.startTime))
+    .attr("width", d =>
+      calculateRectWidth(d.startTime, d.finishTime, minimumWidth)
+    )
     .attr("height", 30)
     .attr("fill", d => d.color)
+
+  // svg
+  //   .selectAll("rect")
+  //   .data(visualizationData)
+  //   .enter()
+  //   .append("rect")
+  //   .attr("x", d => xScale(d.startTime))
+  //   .attr("y", 20)
+  //   .attr("width", d => xScale(d.finishTime) - xScale(d.startTime))
+  //   .attr("height", 30)
+  //   .attr("fill", d => d.color)
 
   // Add labels for each process
   svg
@@ -250,4 +263,11 @@ function calculateSJF() {
   // Create x-axis
   const xAxis = d3.axisBottom(xScale)
   svg.append("g").attr("transform", `translate(0, 60)`).call(xAxis)
+  svg
+    .append("text")
+    .attr("x", width / 2)
+    .attr("y", height - 5)
+
+    .style("text-anchor", "middle")
+    .text("Time")
 }
