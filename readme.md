@@ -2,8 +2,12 @@
 
 This repository contains implementations and visualizations for various scheduling algorithms.
 
+## Deployed Links
 
- 
+- https://shortest-remaining-time.vercel.app/
+- https://shortest-job-first.vercel.app/
+- https://highest-response-ratio-next.vercel.app/
+
 # Algorithms Visualization Repository
 
 This repository contains implementations and visualizations for various scheduling algorithms.
@@ -35,8 +39,8 @@ This task implements the Shortest Remaining Time (SRT), Shortest Job First (SJF)
 
 ### Algorithms Included
 
-- Shortest Remaining Time (SRT)
-- Shortest Job First (SJF)
+- Shortest Remaining Time (SRT) 
+- Shortest Job First (SJF)  
 - Highest Response Ratio Next (HRRN)
 
 ### Usage
