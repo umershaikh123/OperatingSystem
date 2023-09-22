@@ -11,7 +11,9 @@ This repository contains implementations and visualizations for various scheduli
 ## Task 1: Round Robin Algorithm
 
 The Round Robin algorithm is implemented in this task.
-![image](https://github.com/umershaikh123/OperatingSystem/assets/42178214/4d29364c-6ad1-4f94-b67e-d8b2c53fdc30)
+
+![image](https://github.com/umershaikh123/OperatingSystem/assets/42178214/f198abbb-21d7-44cc-b0ea-e9ba1af2aa3b)
+
 
 ### Usage
 
@@ -23,8 +25,12 @@ To run the Round Robin algorithm, navigate to the `task1` folder and follow the 
 ## Task 2: SRT, SJF, HRRN Algorithms with GUI and Visualization
 This task implements the Shortest Remaining Time (SRT), Shortest Job First (SJF), and Highest Response Ratio Next (HRRN) scheduling algorithms. It includes a GUI and visualization for better understanding.
 
-![image](https://github.com/umershaikh123/OperatingSystem/assets/42178214/965e5549-4d66-45f9-b0ce-7bef6b439825)
-![image](https://github.com/umershaikh123/OperatingSystem/assets/42178214/d7309bc4-f5d9-44a0-aef3-64417fdc4e8d)
+
+ ![image](https://github.com/umershaikh123/OperatingSystem/assets/42178214/55331241-5576-4620-96f4-d203b8995953)
+
+
+ ![image](https://github.com/umershaikh123/OperatingSystem/assets/42178214/7a27ee0d-f8c0-4ff7-8938-53f21456de14)
+
 
 
 ### Algorithms Included
