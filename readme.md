@@ -1,30 +1,55 @@
-# Round Robin Scheduling Simulation
+# Operating System Scheduling Simulation
 
-This repository contains a simple simulation of the Round Robin scheduling algorithm for a set of processes.
+This repository contains implementations and visualizations for various scheduling algorithms.
 
-## How It Works
 
-1. **Creating Processes**: Run the program and input the number of processes you want to create (between 3 and 5). For each process, provide its arrival time and execution time.
+ 
+# Algorithms Visualization Repository
 
-2. **Sorting Processes**: The processes are sorted based on their arrival times. The process with the earliest arrival time is set to start execution first.
+This repository contains implementations and visualizations for various scheduling algorithms.
 
-3. **Executing Processes**: The simulation begins by running the first process that arrived. It's given a certain amount of time to execute, known as a time slice (quantum size). The process runs until it uses up its time slice or completes its execution.
+## Task 1: Round Robin Algorithm
 
-4. **Resume Instruction Address**: Each process keeps track of its execution progress using the "Resume Instruction Address." This helps processes pick up where they left off when they get another chance to run.
+The Round Robin algorithm is implemented in this task.
+![image](https://github.com/umershaikh123/OperatingSystem/assets/42178214/4d29364c-6ad1-4f94-b67e-d8b2c53fdc30)
 
-5. **Time Tracking**: The simulation updates the current time as processes are scheduled and executed. Remaining execution time for each process is adjusted based on the time slice allocated.
+### Usage
 
-6. **Completion and Turnaround Time**: When a process completes its execution, its finish time is recorded. Turnaround time is calculated as the total time from arrival to completion.
-
-7. **Queue Management**: Processes that don't complete within their time slice are placed back in the queue to run later. This continues until all processes complete their execution.
-
-8. **Output**: The program provides detailed information about each process's execution, including arrival time, execution time, remaining time, utilization time, and more. It also shows which processes have completed their execution and overall completion.
-
-## Getting Started
-
+To run the Round Robin algorithm, navigate to the `task1` folder and follow the instructions below
 1. Clone the repository: `https://github.com/umershaikh123/OperatingSystem.git`
 2. Navigate to the project directory: `cd OperatingSystem/Task1`
 3. Run the simulation: `node .\Final.js`
+
+## Task 2: SRT, SJF, HRRN Algorithms with GUI and Visualization
+This task implements the Shortest Remaining Time (SRT), Shortest Job First (SJF), and Highest Response Ratio Next (HRRN) scheduling algorithms. It includes a GUI and visualization for better understanding.
+
+![image](https://github.com/umershaikh123/OperatingSystem/assets/42178214/965e5549-4d66-45f9-b0ce-7bef6b439825)
+![image](https://github.com/umershaikh123/OperatingSystem/assets/42178214/d7309bc4-f5d9-44a0-aef3-64417fdc4e8d)
+
+
+### Algorithms Included
+
+- Shortest Remaining Time (SRT)
+- Shortest Job First (SJF)
+- Highest Response Ratio Next (HRRN)
+
+### Usage
+
+1. Navigate to the `task2` folder.
+2. run the htnl live sever in vscode for the desired algorithm
+
+### GUI and Visualization
+
+The GUI and visualization provide an interactive interface to understand the behavior of the implemented scheduling algorithms.
+
+## Directory Structure
+
+- `task1`: Contains the implementation of the Round Robin algorithm.
+- `task2`: Contains the implementations of SRT, SJF, and HRRN algorithms with GUI and visualization.
+
+
+ 
+
 
 ## Contributions
 
