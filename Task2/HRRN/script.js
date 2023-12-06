@@ -102,6 +102,7 @@ function calculateHRRN() {
 
     processes[i].startTime = currentTime - processes[i].burstTime
     processes[i].finishTime = currentTime
+    console.log("process ", i, "response Ratio = ", processes[i].responseRatio)
   }
 
   // Calculate average metrics
