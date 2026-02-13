@@ -4,9 +4,10 @@ This repository contains implementations and visualizations for various scheduli
 
 ## Deployed Links
 
-- https://shortest-remaining-time.vercel.app/
-- https://shortest-job-first.vercel.app/
-- https://highest-response-ratio-next.vercel.app/
+- Hrrn : https://operating-system-hrrn.vercel.app/
+- SJF : https://operating-system-sjf.vercel.app/
+- SRT : https://operating-system-ruby.vercel.app/
+
 
 # Algorithms Visualization Repository
 
